@@ -10,7 +10,7 @@
    if ((JudyErrno) == JU_ERRNO_NOMEM)                                     \
        goto out_of_memory;                                                \
 }
-#include <Judy.h>
+#include "Judy/Judy.h"
 
 #include "tdb_internal.h"
 #include "tdb_encode_model.h"

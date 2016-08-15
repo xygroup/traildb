@@ -4,8 +4,8 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <inttypes.h>
-#include "traildb.h"
-#include "tdb_profile.h"
+#include "traildb/traildb.h"
+#include "../src/tdb_profile.h"
 
 
 #define REPORT_ERROR(fmt, ...)				\

@@ -15,7 +15,7 @@
    if ((JudyErrno) == JU_ERRNO_NOMEM)                                     \
        goto out_of_memory;                                                \
 }
-#include <Judy.h>
+#include "Judy/Judy.h"
 
 #include "judy_str_map.h"
 #include "tdb_internal.h"
