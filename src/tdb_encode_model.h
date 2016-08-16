@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#include "Judy/Judy.h"
+#include <Judy.h>
 
 #include "tdb_types.h"
 #include "judy_128_map.h"

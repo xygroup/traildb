@@ -76,7 +76,7 @@ cc_library(
     "-Wshadow",
     #"-strict-prototypes",
     "-Itraildb",
-    "-IJudy",
+    "-IJudy/src",
   ],
   visibility = ["//visibility:private"],
 )

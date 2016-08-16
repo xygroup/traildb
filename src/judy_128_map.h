@@ -2,7 +2,7 @@
 #ifndef __JUDY_128_MAP_H__
 #define __JUDY_128_MAP_H__
 
-#include "Judy/Judy.h"
+#include <Judy.h>
 #include <stdint.h>
 
 typedef void *(*judy_128_fold_fn)(__uint128_t key, Word_t *value, void*);
