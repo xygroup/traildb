@@ -92,6 +92,32 @@ deps = [
 ":traildb"
 ],
 copts = [
+"-IJudy/src",
+"-IJudy/src/JudyCommon",
 "-Itraildb",
+],
+)
+
+cc_binary(
+name="tbd",
+srcs=[
+"src/traildb.h",
+"tdbcli/main.c",
+"tdbcli/op_dump.c",
+"tdbcli/op_make.c",
+"tdbcli/jsmn/jsmn.c",
+],
+deps = [
+":traildb"
+],
+copts = [
+"-IJudy/src",
+"-IJudy/src/JudyCommon",
+"-Itraildb/src",
+"-std=c99",
+"-DJUDYERROR=judyerror_macro_missing_fix_this",
+"-O3",
+"-g",
+"-Wall",
 ],
 )
