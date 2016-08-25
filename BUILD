@@ -20,6 +20,7 @@ cc_library(
     "src/tdb_cons.c",
     "src/tdb_uuid.c",
     "src/tdb_decode.c",
+    "src/tdb_encode.c",
     "src/tdb_encode_model.c",
     "src/tdb_queue.c",
     "src/tdb_huffman.c",
@@ -32,6 +33,7 @@ cc_library(
     "src/dsfmt/dSFMT.c",
   ],
   hdrs = [
+    "src/tdb_internal.h",
     "src/traildb.h",
     "src/tdb_error.h",
     "src/tdb_types.h",
@@ -41,7 +43,6 @@ cc_library(
     "src/dsfmt/dSFMT-params.h",
     "src/dsfmt/dSFMT.h",
     "src/tdb_package.h",
-    "src/tdb_internal.h",
     "src/arena.h",
     "src/judy_str_map.h",
     "src/xxhash/xxhash.h",
@@ -75,9 +76,11 @@ cc_library(
     "-Wpointer-arith",
     "-Wshadow",
     #"-strict-prototypes",
-    "-Itraildb",
+    "-Itraildb/src",
     "-IJudy/src",
-  ],
+    "-Itraildb/src/xxhash",
+    "-Itraildb/src/dsfmt"
+],
   visibility = ["//visibility:private"],
 )
 
@@ -106,6 +109,48 @@ srcs=[
 "tdbcli/op_dump.c",
 "tdbcli/op_make.c",
 "tdbcli/jsmn/jsmn.c",
+],
+deps = [
+":traildb"
+],
+copts = [
+"-IJudy/src",
+"-IJudy/src/JudyCommon",
+"-Itraildb/src",
+"-std=c99",
+"-DJUDYERROR=judyerror_macro_missing_fix_this",
+"-O3",
+"-g",
+"-Wall",
+],
+)
+
+cc_binary(
+name="tutorial_simple_traildb",
+srcs=[
+"src/traildb.h",
+"examples/tutorial_simple_traildb.c",
+],
+deps = [
+":traildb"
+],
+copts = [
+"-IJudy/src",
+"-IJudy/src/JudyCommon",
+"-Itraildb/src",
+"-std=c99",
+"-DJUDYERROR=judyerror_macro_missing_fix_this",
+"-O3",
+"-g",
+"-Wall",
+],
+)
+
+cc_binary(
+name="tutorial_wikipedia_sessions",
+srcs=[
+"src/traildb.h",
+"examples/tutorial_wikipedia_sessions.c",
 ],
 deps = [
 ":traildb"
