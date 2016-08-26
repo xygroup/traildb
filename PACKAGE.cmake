@@ -8,7 +8,7 @@ ${BAZEL_BIN}/Judy/libLcount.a
 ${BAZEL_BIN}/Judy/libLinline.a
 ${BAZEL_BIN}/Judy/libLnext.a
 ${BAZEL_BIN}/Judy/libLprev.a
+${WORKSPACE}/bazel-server/archive/lib/libarchive.dylib
 )
-
 
 include_directories(${TRAILDB_INC})
