@@ -56,7 +56,7 @@ cc_library(
   ],
   deps = [
     "//Judy",
-    "//archive",
+    # "//archive",
   ],
   linkstatic = 1,
   copts = [
@@ -82,7 +82,7 @@ cc_library(
     "-Itraildb/src/xxhash",
     "-Itraildb/src/dsfmt",
     "-Iarchive/include",
-    "-DHAVE_ARCHIVE_H=1",
+    # "-DHAVE_ARCHIVE_H=1",
 ],
   visibility = ["//visibility:private"],
 )
