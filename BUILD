@@ -1,4 +1,4 @@
-cc_inc_library(
+cc_library(
   name = "traildb",
   hdrs = [
     "src/traildb.h",
@@ -9,7 +9,7 @@ cc_inc_library(
   deps = [
     ":traildb_impl",
   ],
-  prefix = "src",
+  include_prefix = "src",
   visibility = ["//visibility:public"]
 )
 
