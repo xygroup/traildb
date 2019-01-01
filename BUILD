@@ -55,7 +55,7 @@ cc_library(
     "src/tdb_encode_model.h",
   ],
   deps = [
-    "//Judy",
+    "//judy",
     # "//archive",
   ],
   linkstatic = 1,
